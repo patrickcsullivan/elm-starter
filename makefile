@@ -1,7 +1,5 @@
-ELM=elm-make
-
 make: src/
-	elm make src/Main.elm --output=main.js
+	elm make src/Main.elm --optimize --output=main.js
 
 clean:
 	rm -rf main.js elm-stuff

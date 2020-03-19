@@ -4,7 +4,7 @@ import Browser
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
 
-
+main : Program Never Model Msg
 main =
     Browser.sandbox { init = 0, update = update, view = view }
 
@@ -13,7 +13,7 @@ type Msg
     = Increment
     | Decrement
 
-
+update : Model -> Msg -> Model
 update msg model =
     case msg of
         Increment ->
@@ -22,7 +22,7 @@ update msg model =
         Decrement ->
             model - 1
 
-
+view : Model -> Html Msg
 view model =
     div []
         [ button [ onClick Decrement ] [ text "-" ]
